@@ -14,12 +14,12 @@ public class SocketServer {
             System.out.println("Connected");
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter printWriter = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
-            Thread thread = new Thread(() -> reanAndWrite(bufferedReader, printWriter));
+            Thread thread = new Thread(() -> readAndWrite(bufferedReader, printWriter));
             thread.start();
         }
     }
 
-    private static void reanAndWrite(BufferedReader bufferedReader, PrintWriter printWriter) {
+    private static void readAndWrite(BufferedReader bufferedReader, PrintWriter printWriter) {
         try {
             while (true) {
                 String input = null;

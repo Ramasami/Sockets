@@ -23,8 +23,7 @@ public class SocketServer {
         try {
             while (true) {
                 String input = null;
-                    input = bufferedReader.readLine();
-
+                input = bufferedReader.readLine();
                 printWriter.println("Server Says: " + input);
             }
         } catch (IOException e) {
